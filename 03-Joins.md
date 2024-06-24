@@ -1,12 +1,31 @@
+# Joins
+Joins, as the name suggests, are a way to combine data from multiple tables. For example, if I want to combine the data from the `students` and `batches` table, I can use joins for that. Think of joins as a way to stitch rows of 2 tables together, based on the condition you specify.
 
-## Agenda
+We would want to stitch a row of students table with a row of batches table based on the `batch_id` column. This is what we call a `join condition`. A join condition is a condition that must be true between the rows of 2 tables for them to be stitched together.
 
- - Self Join
- - More problems on Joins
- - Inner vs Outer joins
- - WHERE vs ON
- - Union and Union All 
+```sql
+SELECT students.first_name, batches.batch_name
+FROM students
+JOIN batches
+ON students.batch_id = batches.batch_id;
+```
+For every film, print its name and the language.
 
+```sql
+SELECT film.title, language.name
+FROM film
+JOIN language
+ON film.language_id = language.language_id;
+```
+
+Now, sometimes typing name of tables in the query can become difficult. For example, in the above query, we have to type `film` and `language` multiple times. To make this easier, we can give aliases to the tables. For example, we can give the alias `f` to the `film` table and `l` to the `language` table. We can then use these aliases in our query. Let's see how we can do that:
+
+```sql
+SELECT f.title, l.name
+FROM film AS f
+JOIN language AS l
+ON f.language_id = l.language_id;
+```
 
 ## Self Join
 
@@ -350,4 +369,5 @@ FROM actor) AS some_alias
 ORDER BY first_name, last_name
 LIMIT 10
 ```
+
 

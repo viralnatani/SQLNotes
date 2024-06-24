@@ -12,10 +12,6 @@
 
 ## Introduction to Indexing
 
-Hello Everyone
-
-Till now, in the course, we had been discussing majorly about how to write SQL queries to fetch data we want to fetch. While discussing those queries, I also often wrote pseudocode talking about how at a higher level that query might work behind the scenes. 
-
 Let us go back to that pseudocode. What do you think are some of the problems you see a user of DB will face if the DB really worked exactly how the pseudocode mentioned it worked?
 
 Correct! In the pseudocode we had, for loops iterated over each row of the database to retrieve the desired rows. This resulted in a minimum time complexity of O(N) for every query. When joins or other operations are involved, the complexity further increases.
